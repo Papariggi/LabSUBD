@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <!-- header -->
+    <div class="w3-container w3-blue-grey w3-opacity w3-center">
+        <h1>Books</h1>
+    </div>
+
+    <!-- content -->
+    <div class="w3-container w3-center">
+        <!-- buttons -->
+        <div class="w3-bar w3-padding-large w3-padding-24">
+            <button class="w3-btn w3-hover-green w3-round-large w3-container w3-green w3-xlarge"
+                    onclick="location.href = '/LabSUBD/list'">List of books</button>
+
+
+            <button class="w3-btn w3-hover-green w3-round-large w3-container w3-green w3-xlarge"
+                    onclick="location.href = '/LabSUBD/add'">Add book</button>
+            <button class="w3-btn w3-hover-green w3-round-large w3-container w3-green w3-xlarge"
+                    onclick="location.href = '/LabSUBD/delete'">Delete book</button>
+
+            <form class="w3-margin" action="/LabSUBD/sort" method="post">
+                <select name = "sort" class="w3-btn w3-hover-green w3-round-large w3-container w3-green w3-xlarge">
+                    <option value="">Select sort type...</option>
+                    <option value="sortByTitle">Sort by title</option>
+                    <option value="sortByAuthor">Sort by author</option>
+                    <option value="sortByYear">Sort by year</option>
+                    <option value="sortByPublisher">Sort by publisher</option>
+                </select>
+                    <button type="submit" class="w3-margin-left w3-btn w3-hover-green w3-round-large w3-container w3-green w3-xlarge">sort</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
