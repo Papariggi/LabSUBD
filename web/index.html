@@ -32,7 +32,18 @@
                     <option value="sortByYear">Sort by year</option>
                     <option value="sortByPublisher">Sort by publisher</option>
                 </select>
-                    <button type="submit" class="w3-margin-left w3-btn w3-hover-green w3-round-large w3-container w3-green w3-xlarge">sort</button>
+                    <button type="submit" class="w3-margin-left w3-btn w3-hover-green w3-round-large w3-container w3-green w3-xlarge">Sort</button>
+            </form>
+
+            <form class="w3-margin" action="/LabSUBD/search" method="post">
+                <select name = "search" class="w3-btn w3-hover-green w3-round-large w3-container w3-green w3-xlarge">
+                    <option value="">Select search type...</option>
+                    <option value="searchByTitle">Search by title</option>
+                    <option value="searchByAuthor">Search by author</option>
+                    <option value="searchByYear">Search by year</option>
+                    <option value="searchByPublisher">Search by publisher</option>
+                </select>
+                <button type="submit" class="w3-margin-left w3-btn w3-hover-green w3-round-large w3-container w3-green w3-xlarge">Search</button>
             </form>
 
         </div>

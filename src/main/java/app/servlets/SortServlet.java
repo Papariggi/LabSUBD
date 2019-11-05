@@ -25,6 +25,7 @@ public class SortServlet extends HttpServlet {
         String sortType = req.getParameter("sort");
 
         if (sortType == null) {
+            System.out.println(1);
             req.setAttribute("fail", "fail");
             new ListOfBooksServlet().doGet(req, resp);
         }
@@ -64,6 +65,7 @@ public class SortServlet extends HttpServlet {
             requestDispatcher.forward(req, resp);
         }
         catch (Exception e) {
+            e.printStackTrace();
             req.setAttribute("fail", "fail");
             new ListOfBooksServlet().doGet(req, resp);
         }
