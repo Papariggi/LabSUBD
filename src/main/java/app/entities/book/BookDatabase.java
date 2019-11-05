@@ -175,7 +175,7 @@ public class BookDatabase {
         }
     }
 
-    public FullBook findBook(String title, String author, String publisher) {
+    private FullBook findBook(String title, String author, String publisher) {
         if (fullBooks.isEmpty())
             return null;
 
@@ -288,6 +288,92 @@ public class BookDatabase {
         connection.setAutoCommit(true);
         return fullBooks;
     }
+
+    public List<FullBook> searchByTitle(String titleStr) throws SQLException {
+        fullBooks = new ArrayList<>();
+        connection.setAutoCommit(false);
+        String sortPublisherQuery = "SELECT * FROM test.full_books WHERE title = '" + titleStr + "'";
+        try (Connection con = GetJDBCConnection.init()) {
+            Statement statement = con.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(sortPublisherQuery);
+            while (resultSet.next()) {
+                String title = resultSet.getString(1);
+                String author = resultSet.getString(2);
+                int yearOfWriting = resultSet.getInt(3);
+                String publisher = resultSet.getString(4);
+                fullBooks.add(new FullBook(title, author, yearOfWriting, publisher));
+            }
+        }
+        connection.commit();
+        connection.setAutoCommit(true);
+        return fullBooks;
+    }
+
+    public List<FullBook> searchByAuthor(String titleStr) throws SQLException {
+        fullBooks = new ArrayList<>();
+        connection.setAutoCommit(false);
+        String sortPublisherQuery = "SELECT * FROM test.full_books WHERE author = '" + titleStr + "'";
+        try (Connection con = GetJDBCConnection.init()) {
+            Statement statement = con.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(sortPublisherQuery);
+            while (resultSet.next()) {
+                String title = resultSet.getString(1);
+                String author = resultSet.getString(2);
+                int yearOfWriting = resultSet.getInt(3);
+                String publisher = resultSet.getString(4);
+                fullBooks.add(new FullBook(title, author, yearOfWriting, publisher));
+            }
+        }
+        connection.commit();
+        connection.setAutoCommit(true);
+        return fullBooks;
+    }
+
+    public List<FullBook> searchByYear(String titleStr) throws SQLException {
+        fullBooks = new ArrayList<>();
+        connection.setAutoCommit(false);
+        String sortPublisherQuery = "SELECT * FROM test.full_books WHERE year = '" + titleStr + "'";
+        try (Connection con = GetJDBCConnection.init()) {
+            Statement statement = con.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(sortPublisherQuery);
+            while (resultSet.next()) {
+                String title = resultSet.getString(1);
+                String author = resultSet.getString(2);
+                int yearOfWriting = resultSet.getInt(3);
+                String publisher = resultSet.getString(4);
+                fullBooks.add(new FullBook(title, author, yearOfWriting, publisher));
+            }
+        }
+        connection.commit();
+        connection.setAutoCommit(true);
+        return fullBooks;
+    }
+
+    public List<FullBook> searchByPublisher(String titleStr) throws SQLException {
+        fullBooks = new ArrayList<>();
+        connection.setAutoCommit(false);
+        String sortPublisherQuery = "SELECT * FROM test.full_books WHERE publisher = '" + titleStr + "'";
+        try (Connection con = GetJDBCConnection.init()) {
+            Statement statement = con.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(sortPublisherQuery);
+            while (resultSet.next()) {
+                String title = resultSet.getString(1);
+                String author = resultSet.getString(2);
+                int yearOfWriting = resultSet.getInt(3);
+                String publisher = resultSet.getString(4);
+                fullBooks.add(new FullBook(title, author, yearOfWriting, publisher));
+            }
+        }
+        connection.commit();
+        connection.setAutoCommit(true);
+        return fullBooks;
+    }
+
+
 
         //
 //    private void generateAuthorsToTable() throws SQLException {

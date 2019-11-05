@@ -44,4 +44,24 @@
         <url-pattern>/sort</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>search</servlet-name>
+        <servlet-class>app.servlets.SearchServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>enterSearch</servlet-name>
+        <servlet-class>app.servlets.EnterSearchServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>enterSearch</servlet-name>
+        <url-pattern>/enterSearch</url-pattern>
+    </servlet-mapping>
+
 </web-app>
